@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rentalsuitstate/style.dart';
 
+import 'dart:async';
 import 'package:qrscan/qrscan.dart' as scanner;
 
 void main() {
@@ -28,27 +29,23 @@ class RentalSuitState extends StatefulWidget {
 }
 
 class _RentalSuitStateState extends State<RentalSuitState> {
+  Future _scan() async {
+    String barcode = await scanner.scan().toString();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         body: SearchCondition(),
-      ),
-    );
-  }
-}
-
-class SearchQr extends StatelessWidget {
-  const SearchQr({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: 300,
-        height: 300,
-        color: mainColor,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => _scan(),
+          tooltip: 'scan',
+          child: const Icon(Icons.qr_code_rounded),
+          backgroundColor: blackColor,
+        ),
       ),
     );
   }
@@ -115,6 +112,43 @@ class _SearchConditionState extends State<SearchCondition> {
             ],
           ),
         ),
+        Expanded(
+          child: Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(16),
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return InkWell(
+                  child: Container(
+                    width: double.infinity,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: greyColor,
+                          strokeAlign: BorderSide.strokeAlignInside,
+                          width: 2,
+                        ),
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Text(
+                          'Num / Size(Type)',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: blackColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  onTap: () {},
+                );
+              },
+            ),
+          ),
+        )
       ],
     );
   }
