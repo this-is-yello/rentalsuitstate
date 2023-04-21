@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1063619579617",
+    "project_id": "bykakrentalsuitstate",
+    "storage_bucket": "bykakrentalsuitstate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1063619579617:android:522db0989f9ee48bf7f1a0",
+        "android_client_info": {
+          "package_name": "com.designer.bykakrentalsuitstate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1063619579617-r3a5vq0jq4oe0v5595ddu5sagrjpqjp5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMjFOQ8NpUUDijPOPZqUe7lsnSJo85PC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1063619579617-r3a5vq0jq4oe0v5595ddu5sagrjpqjp5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1063619579617-6o09qvgdjh3oiqa3jo6ok018b4nqmk3m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.designer.bykakrentalsuitstate"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
